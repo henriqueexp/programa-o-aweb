@@ -1,6 +1,4 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Uninovr.Web.Models;
 
 namespace Uninove.Web.Controllers;
 
@@ -8,10 +6,16 @@ public class AlunoController : Controller
 {
     public IActionResult Index()
     {
-        ViewBag.Nome = "Henrique";
-        ViewBag.curso = "Análise de Sistemas";
-        ViewBag.Semestre = 1;
+        ViewBag.Nome = "Henrique Moraes Expedito";
+        ViewBag.Curso = "Análise e Desenvolvimento de Sistemas";
+        ViewBag.Semestre = "1º Semestre";
 
+        return View();
+    }
+
+    public IActionResult Detalhes(int id)
+    {
+        ViewBag.Id = id;
         return View();
     }
 }
